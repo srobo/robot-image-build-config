@@ -1,0 +1,12 @@
+[submodule "sources/meta-openembedded"]
+	path = sources/meta-openembedded
+	url = https://git.openembedded.org/meta-openembedded
+[submodule "sources/poky"]
+	path = sources/poky
+	url = git://git.yoctoproject.org/poky
+[submodule "sources/meta-odroid-u3"]
+	path = sources/meta-odroid-u3
+	url = https://github.com/srobo/meta-odroid-u3.git
+[submodule "sources/meta-srobo"]
+	path = sources/meta-srobo
+	url = https://github.com/srobo/meta-srobo.git

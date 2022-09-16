@@ -1,48 +1,73 @@
-Build configuration for yocto based robot image
-===============================================
+# Student Robotics OS
 
-This repository contains the configuration and helper scripts for building the student robotics robot image using yocto.
+Student Robotics OS is a Linux distribution for use on the [Student Robotics](https://studentrobotics.org) kit.
 
-Quickstart
-----------
+This repository contains build scripts to compile disk images and update bundles.
 
-Then run the following commands to setup the build environment.
+## Setup Your Build Environment
 
-```bash
-mkdir srobo-build
-cd srobo-build
-git clone <this repo url>
+Firstly, you will need to install the dependencies for Yocto.
+
+On Ubuntu or Debian, you can install with the following command:
+
+```shell
+sudo apt install gawk wget git-core diffstat unzip texinfo \
+     build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
+     xz-utils lz4 debianutils iputils-ping libsdl1.2-dev xterm zstd bmap-tools
 ```
 
-Run this script to install the required yocto dependecies and setup the submodules.
-This is only valid for a system using apt.
+If you are using a x86-based computer, you will also need to install a cross-compiler:
 
-```bash
-source ./scripts/setup.sh
+```shell
+sudo apt install gcc-multilib
 ```
 
-You can then activate the build environment in a terminal by running the following, it is best to run this in bash as some shells dont work correctly with yocto.
+Once your have installed the system dependencies, you will need to setup the repository:
 
-```bash
+```shell
+git clone git@github.com:srobo/robot-image.git
+git submodule update --init --recursive
+```
+
+Next, you will need to activate the Yocto build environment. This works best if you are using `bash` as your shell.
+
+```shell
+cd robot-image
 source ./setup-env.sh
 ```
 
-The image can then be built by running the following command, this will take some time on the first build as it downloads and build all components of the image.
+The `bitbake` utility can then be used to build the operating system.
+
+## Building an Image
+
+A complete disk image with dual partitions can be generated using the following command:
 
 ```bash
 bitbake srobo-image-robot
 ```
 
-Once complete the output of the bitbake command needs to be assembled into an SD card image.
-This can be done by running the following command.
+The built image will be saved in `build/tmp/deploy/images/raspberrypi4-64/` with a file name like `srobo-image-robot-raspberrypi4-64-20220916204611.rootfs.wic.bz2`
+
+You can convert it to a `img.xz` file using the `assemble` script:
 
 ```bash
-sudo ./assemble srobo-image-latest "2022.2"
+sudo ./assemble srobo-image-latest
 ```
 
-Where the first argument is the desired name for the output image and the second argument is the version string that will be inserted into the image.
+The `assemble` script also supports writing directly to an SD card, although caution should be taken when doing this.
 
-The output image will be found inside the ```build/outputs/``` directory.
+```bash
+sudo ./assemble /dev/sdd
+```
 
-[yocto-deps]: https://www.yoctoproject.org/docs/2.4.2/yocto-project-qs/yocto-project-qs.html#packages
+## Building an Update Bundle
 
+An update bundle can be generated using the following command:
+
+```bash
+bitbake srobo-bundle-robot
+```
+
+The built file will be saved in `build/tmp/deploy/images/raspberrypi4-64/` with a file name like `srobo-bundle-robot-raspberrypi4-64-20220916204611.raucb`.
+
+This update file can then be used to update the robot.

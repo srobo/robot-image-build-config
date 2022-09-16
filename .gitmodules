@@ -4,9 +4,6 @@
 [submodule "sources/poky"]
 	path = sources/poky
 	url = git://git.yoctoproject.org/poky
-[submodule "sources/meta-srobo"]
-	path = sources/meta-srobo
-	url = https://github.com/srobo/meta-srobo.git
 [submodule "sources/meta-raspberrypi"]
 	path = sources/meta-raspberrypi
 	url = https://github.com/agherzan/meta-raspberrypi.git

@@ -11,3 +11,9 @@
 	path = sources/meta-raspberrypi
 	url = https://github.com/agherzan/meta-raspberrypi.git
 	branch = kirkstone
+[submodule "sources/meta-rauc"]
+	path = sources/meta-rauc
+	url = https://github.com/rauc/meta-rauc
+[submodule "sources/meta-rauc-community"]
+	path = sources/meta-rauc-community
+	url = https://github.com/rauc/meta-rauc-community

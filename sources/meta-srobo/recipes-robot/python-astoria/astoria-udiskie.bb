@@ -14,6 +14,7 @@ SRC_URI = " \
     file://LICENSE \
     file://50-udiskie.rules \
     file://astoria-udiskie.service \
+    file://astoria-udiskie.yml \
     "
 
 S = "${WORKDIR}"
@@ -28,4 +29,6 @@ do_install () {
     install -m 0600 -o polkitd -g polkitd ${WORKDIR}/50-udiskie.rules ${D}/etc/polkit-1/rules.d/
     install -d ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/astoria-udiskie.service ${D}${systemd_system_unitdir}
+    install -d ${D}/etc/
+    install -m 0644 ${WORKDIR}/astoria-udiskie.yml ${D}/etc/
 }

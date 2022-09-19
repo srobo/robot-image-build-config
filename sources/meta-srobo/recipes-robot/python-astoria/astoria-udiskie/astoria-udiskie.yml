@@ -1,0 +1,10 @@
+# Configuration for Udiskie
+device_config:
+  - device_file: /dev/mmcblk0p1  # Ignore boot partition
+    ignore: true
+  - device_file: /dev/mmcblk0p2  # Ignore Partition A
+    ignore: true
+  - device_file: /dev/mmcblk0p3  # Ignore Partition B
+    ignore: true
+  - device_file: /dev/mmcblk0p4  # Ignore Home Partition
+    ignore: true

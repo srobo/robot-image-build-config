@@ -3,7 +3,7 @@ Description=Udiskie Disk Automounter
 After=udisks2.service
 
 [Service]
-ExecStart=/usr/bin/udiskie
+ExecStart=/usr/bin/udiskie -c /etc/astoria-udiskie.yml
 User=astoria
 Restart=on-failure
 RestartSec=5s

@@ -22,11 +22,17 @@ If you are using a x86-based computer, you will also need to install a cross-com
 sudo apt install gcc-multilib
 ```
 
+On openSUSE, you can install with the following command:
+```shell
+sudo zypper install -y python gcc gcc-c++ git chrpath make wget python-xml \
+     diffstat makeinfo python-curses patch socat lz4 rpcgen zstd
+```
+
 Once your have installed the system dependencies, you will need to setup the repository:
 
 ```shell
-git clone git@github.com:srobo/robot-image.git
-git submodule update --init --recursive
+git clone git@github.com:srobo/robot-image.git --recursive
+cd robot-image
 ```
 
 Next, you will need to activate the Yocto build environment. This works best if you are using `bash` as your shell.
@@ -51,13 +57,13 @@ The built image will be saved in `build/tmp/deploy/images/raspberrypi4-64/` with
 You can convert it to a `img.xz` file using the `assemble` script:
 
 ```bash
-sudo ./assemble srobo-image-latest
+sudo ./scripts/assemble.sh srobo-image-latest
 ```
 
 The `assemble` script also supports writing directly to an SD card, although caution should be taken when doing this.
 
 ```bash
-sudo ./assemble /dev/sdd
+sudo ./scripts/assemble.sh /dev/sdd
 ```
 
 ## Building an Update Bundle

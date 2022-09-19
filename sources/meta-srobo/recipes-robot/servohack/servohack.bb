@@ -1,7 +1,7 @@
 SUMMARY = "Servo Hack"
 
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=2e7439106ad0c88223e853736a7b7aec"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=9cf1d68632c570aaf064481ea3d898b2"
 
 inherit systemd
 

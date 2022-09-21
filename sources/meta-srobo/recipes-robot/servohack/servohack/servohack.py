@@ -50,7 +50,7 @@ class ServoHackConsumer(StateConsumer):
                     if message.code_status is CodeStatus.RUNNING:
                         self._code_started = True
                         LOGGER.info("Code has been started")
-                    elif message.code_status is not CodeStatus.RUNNING and self._code_started:
+                    elif message.code_status is None and self._code_started:
                         LOGGER.info("USB removed, toggling USB lines")
                         # Use USB power per-port power switching to toggle USB Power
                         # More information on the USB Hub Architecture of the Raspberry Pi 4

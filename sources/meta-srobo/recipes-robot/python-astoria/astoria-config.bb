@@ -16,6 +16,8 @@ SRC_URI = " \
     file://astmetad.service \
     file://astprocd.service \
     file://astwifid.service \
+    file://boot_40.service \
+    file://kchd.service \
     "
 
 S = "${WORKDIR}"
@@ -23,7 +25,14 @@ S = "${WORKDIR}"
 USERADD_PARAM:${PN} = "-r -G video,dialout astoria"
 
 SYSTEMD_AUTO_ENABLE = "enable"
-SYSTEMD_SERVICE:${PN} = "astdiskd.service astmetad.service astprocd.service astwifid.service"
+SYSTEMD_SERVICE:${PN} = " \
+    astdiskd.service \
+    astmetad.service \
+    astprocd.service \
+    astwifid.service \
+    boot_40.service \
+    kchd.service \
+    "
 
 DIRFILES = "1"
 
@@ -33,4 +42,6 @@ do_install () {
     install -m 0644 ${WORKDIR}/astmetad.service ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/astprocd.service ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/astwifid.service ${D}${systemd_system_unitdir}
+    install -m 0644 ${WORKDIR}/boot_40.service ${D}${systemd_system_unitdir}
+    install -m 0644 ${WORKDIR}/kchd.service ${D}${systemd_system_unitdir}
 }

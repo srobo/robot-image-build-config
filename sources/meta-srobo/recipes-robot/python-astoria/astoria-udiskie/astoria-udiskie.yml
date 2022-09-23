@@ -8,3 +8,5 @@ device_config:
     ignore: true
   - device_file: /dev/mmcblk0p4  # Ignore Home Partition
     ignore: true
+  - id_label: SR_COMP_USB        # Mount competition mode USBs as read only
+    options: [ro]

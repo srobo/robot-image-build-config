@@ -1,3 +1,6 @@
+# This image recipe is currently not in use but remains here as reference for when RAUC is implemented
+# The contents of this recipe are the same as the main image but with a different image partition layout
+
 DESCRIPTION = "Student Robotics kit software image"
 LICENSE = "MIT"
 
@@ -8,6 +11,7 @@ IMAGE_FEATURES += " \
     ssh-server-dropbear \
     package-management \
     "
+DISTRO_FEATURES += "rauc"
 
 CORE_IMAGE_EXTRA_INSTALL += " \
     packagegroup-core-full-cmdline \
@@ -22,5 +26,10 @@ CORE_IMAGE_EXTRA_INSTALL += " \
     python3-pyudev \
     "
 
+RPI_USE_U_BOOT = "1"
 VIDEO_CAMERA = "1"
+ENABLE_UART = "1"
 
+IMAGE_INSTALL:append = " rauc"
+IMAGE_FSTYPES += "ext4 wic.bz2"
+WKS_FILE = "sdimage-dual-raspberrypi.wks.in"

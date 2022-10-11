@@ -1,3 +1,6 @@
+# This image recipe is currently not in use but remains here as reference for when RAUC is implemented
+# The contents of this recipe are the same as the main image but with a different image partition layout
+
 DESCRIPTION = "Student Robotics kit software image"
 LICENSE = "MIT"
 

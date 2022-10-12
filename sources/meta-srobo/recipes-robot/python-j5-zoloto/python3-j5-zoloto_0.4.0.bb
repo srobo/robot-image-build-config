@@ -4,7 +4,7 @@ HOMEPAGE = "https://github.com/j5api/j5-zoloto"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=44a99382609e909183f51320bcee1127"
 
-SRC_URI[sha256sum] = "e7040a14bb5b73b5c847de66e07037505c01810640ab7e7dc6e36e7adaf5e260"
+SRC_URI[sha256sum] = "57aacbd7b05d6b121cc52eea21f689ef24b47fa3366699dc77be545504e386bf"
 
 PYPI_PACKAGE = "j5_zoloto"
 inherit pypi setuptools3

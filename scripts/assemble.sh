@@ -52,7 +52,7 @@ if [ -b "$1" ]; then
 else
     # Create output image
     echo "Compressing output image"
-    xz -v "$output_path"
+    xz -vT0 "$output_path"
 
     echo ""
     echo "Image created at: $output_path.xz"

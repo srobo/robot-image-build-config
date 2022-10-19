@@ -2,9 +2,9 @@ SUMMARY = "Robot Management System for Student Robotics Kit"
 DESCRIPTION = "Robot Management System for Student Robotics Kit"
 HOMEPAGE = "https://github.com/srobo/astoria"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=afb9f374f84b496f0a6f7b4d8d76d533"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=caab9905fbe5565770c80322899abeb1"
 
-SRC_URI[sha256sum] = "1c48ab9938c4706c688368c0773abcb81b9b512b792c6f4ac8f7f5142ed6b4e5"
+SRC_URI[sha256sum] = "c2a63259ee8ebc33f54b341203979818df59222b010f7a0ecd3ace0f80d96dfc"
 
 PYPI_PACKAGE = "astoria"
 inherit pypi setuptools3

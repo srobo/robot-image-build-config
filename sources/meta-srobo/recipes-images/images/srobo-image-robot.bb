@@ -20,6 +20,10 @@ CORE_IMAGE_EXTRA_INSTALL += " \
     python3-pandas \
     python3-pillow \
     python3-pyudev \
+    python3-pip \
+    python3-wheel \
+    cmake \
+    packagegroup-core-buildessential \
     "
 
 VIDEO_CAMERA = "1"

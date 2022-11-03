@@ -22,7 +22,7 @@ SRC_URI = " \
 
 S = "${WORKDIR}"
 
-USERADD_PARAM:${PN} = "-r -G video,dialout astoria"
+USERADD_PARAM:${PN} = "--create-home -r -G video,dialout astoria"
 
 SYSTEMD_AUTO_ENABLE = "enable"
 SYSTEMD_SERVICE:${PN} = " \

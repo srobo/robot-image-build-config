@@ -38,7 +38,6 @@ cd robot-image
 Next, you will need to activate the Yocto build environment. This works best if you are using `bash` as your shell.
 
 ```shell
-cd robot-image
 source ./setup-env.sh
 ```
 
@@ -57,13 +56,13 @@ The built image will be saved in `build/tmp/deploy/images/raspberrypi4-64/` with
 You can convert it to a `img.xz` file using the `assemble` script:
 
 ```bash
-sudo ./scripts/assemble.sh srobo-image-latest
+sudo ./assemble srobo-image-latest
 ```
 
 The `assemble` script also supports writing directly to an SD card, although caution should be taken when doing this.
 
 ```bash
-sudo ./scripts/assemble.sh /dev/sdd
+sudo ./assemble /dev/sdd
 ```
 
 ## Building an Update Bundle

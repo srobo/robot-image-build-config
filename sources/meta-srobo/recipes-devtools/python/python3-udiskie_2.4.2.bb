@@ -2,9 +2,9 @@ SUMMARY = "Removable disk automounter for udisks"
 DESCRIPTION = "Removable disk automounter for udisks"
 HOMEPAGE = "https://github.com/coldfix/udiskie"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://COPYING;md5=d43588ca14c7c9eccfcdfd6da5af5351"
+LIC_FILES_CHKSUM = "file://COPYING;md5=f7d6dd19680ac1c4995e76442b897458"
 
-SRC_URI[sha256sum] = "20ff228ed1aaf61509a0101bf1ddcb99c585ee2048be2d0714a3cec2746d4f69"
+SRC_URI[sha256sum] = "1f87ab59cb112915be044fc2ae0b0000a48189af54353793b896ec6c289a0f7c"
 
 PYPI_PACKAGE = "udiskie"
 inherit pypi setuptools3

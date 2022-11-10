@@ -2,7 +2,7 @@ SUMMARY = "Package for SR nftables configuration"
 inherit systemd
 
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=691d84ab639c4b8173db302930bf71f4"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=1d8d73c88a5f93d1407ca45b7c7b2b31"
 
 SYSTEMD_AUTO_ENABLE = "enable"
 SYSTEMD_SERVICE:${PN} = "nftables.service"

@@ -13,7 +13,14 @@ SRC_URI = " \
 
 DEPENDS = "astoria-config"
 
-RDEPENDS:${PN} = "astoria-udiskie python3-kchd python3-sr-robot3 servohack kit-ui"
+RDEPENDS:${PN} = " \
+    astoria-udiskie \
+    python3-kchd \
+    python3-sr-robot3 \
+    servohack \
+    kit-ui \
+    python3-rtui \
+    "
 
 S = "${WORKDIR}"
 

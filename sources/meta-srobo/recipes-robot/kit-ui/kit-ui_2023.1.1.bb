@@ -3,7 +3,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=0a35952eb03763766aeed1257d0fc216"
 
 SRC_URI = " \
-        https://github.com/srobo/kit-ui/releases/download/2023.1.1/kit-ui.zip \
+        https://github.com/srobo/kit-ui/releases/download/${PV}/kit-ui.zip \
         file://LICENSE \
         file://lighttpd.conf \
         "

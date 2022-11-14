@@ -8,5 +8,6 @@ do_install:append () {
     install -m 0644 ${S}/issue ${D}/etc/issue
     sed -i 's/%VERSION%/${SROBO_VERSION}/' ${D}/etc/issue
     install -m 0644 ${S}/motd ${D}/etc/motd
+    sed -i 's/%VERSION%/${SROBO_VERSION}/' ${D}/etc/motd
 }
  

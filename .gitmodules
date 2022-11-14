@@ -3,7 +3,7 @@
 	url = https://git.openembedded.org/meta-openembedded
 [submodule "sources/poky"]
 	path = sources/poky
-	url = git://git.yoctoproject.org/poky
+	url = https://git.yoctoproject.org/poky
 [submodule "sources/meta-raspberrypi"]
 	path = sources/meta-raspberrypi
 	url = https://github.com/agherzan/meta-raspberrypi.git

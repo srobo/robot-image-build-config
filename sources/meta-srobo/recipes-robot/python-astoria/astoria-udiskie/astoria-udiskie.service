@@ -4,7 +4,7 @@ After=udisks2.service
 
 [Service]
 ExecStart=/usr/bin/udiskie -c /etc/astoria-udiskie.yml
-User=astoria
+User=robot
 Restart=on-failure
 RestartSec=5s
 

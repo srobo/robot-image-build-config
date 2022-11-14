@@ -19,7 +19,7 @@ polkit.addRule(function(action, subject) {
     "org.freedesktop.udisks2.eject-media-other-seat": YES,
     "org.freedesktop.udisks2.power-off-drive-other-seat": YES
   };
-  if (subject.isInGroup("astoria")) {
+  if (subject.isInGroup("robot")) {
     return permission[action.id];
   }
 });

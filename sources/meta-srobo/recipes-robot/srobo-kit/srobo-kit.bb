@@ -1,5 +1,9 @@
 SUMMARY = "Package set to define a SR Kit"
 
+inherit useradd
+USERADD_PACKAGES = "srobo-kit"
+# password: tobor
+USERADD_PARAM:${PN} = "--create-home -r -s /bin/bash -G video,dialout -p '\$6\$m.5998lEWY2B.IxH\$nglPyX3BhXOPbBkeNNdJ4sLxFey5wJ543h1tNUpftZq8taJnYX19ewhTKz.HQpi.A33pjSzpPy/QxIOZ6PMeg/' robot"
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=691d84ab639c4b8173db302930bf71f4"
@@ -28,7 +32,7 @@ do_install () {
     install -d ${D}/usr/lib/udev/rules.d/
     install -d ${D}/etc/
     install -d ${D}/var/srobo/cache/
-    chown -R astoria:astoria ${D}/var/srobo/cache/
+    chown -R robot:robot ${D}/var/srobo/cache/
     install -m 0644 ${WORKDIR}/10-srobo.rules ${D}/usr/lib/udev/rules.d/
     install -m 0644 ${WORKDIR}/astoria.toml ${D}/etc/
     install -d ${D}/etc/udisks2/

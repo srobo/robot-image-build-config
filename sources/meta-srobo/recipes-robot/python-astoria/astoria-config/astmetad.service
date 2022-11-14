@@ -5,7 +5,7 @@ After=mosquitto.service
 
 [Service]
 ExecStart=/usr/bin/astmetad
-User=astoria
+User=robot
 Restart=on-failure
 RestartSec=5s
 

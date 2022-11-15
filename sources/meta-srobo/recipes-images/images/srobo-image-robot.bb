@@ -5,7 +5,7 @@ inherit core-image
 
 IMAGE_FEATURES += " \
     debug-tweaks \
-    ssh-server-dropbear \
+    ssh-server-openssh \
     package-management \
     "
 

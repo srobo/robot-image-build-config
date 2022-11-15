@@ -11,7 +11,7 @@ for conf in srobo-config/*; do
     fi
 done
 
-if [ ! -e build/assemble.sh ]; then
+if [ ! -e build/assemble ]; then
     echo "Creating symlink for scripts/assemble.sh in build/assemble"
     ln -s "../scripts/assemble.sh" "build/assemble"
 fi

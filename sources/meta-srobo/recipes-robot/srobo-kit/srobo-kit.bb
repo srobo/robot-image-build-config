@@ -2,7 +2,7 @@ SUMMARY = "Package set to define a SR Kit"
 
 inherit useradd
 USERADD_PACKAGES = "srobo-kit"
-# password: tobor
+# password: robot
 USERADD_PARAM:${PN} = "--create-home -r -s /bin/bash -G video,dialout -p '\$6\$W19UqGeau5E2UOf1\$GxE7Tg0wUe02Phl2H9yDj.6bdGtS.x3OVjUvsy2WoBJ8mRSKRlSs46l6.77FEvAa8fWYoXzok5vrVNZjXX81g0' robot"
 
 LICENSE = "MIT"

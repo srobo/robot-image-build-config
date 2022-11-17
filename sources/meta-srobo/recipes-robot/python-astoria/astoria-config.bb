@@ -4,9 +4,6 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=691d84ab639c4b8173db302930bf71f4"
 
 inherit systemd
-inherit useradd
-
-USERADD_PACKAGES = "astoria-config"
 
 RDEPENDS:${PN} = "python3-astoria python3-udiskie mosquitto"
 
@@ -21,8 +18,6 @@ SRC_URI = " \
     "
 
 S = "${WORKDIR}"
-
-USERADD_PARAM:${PN} = "--create-home -r -G video,dialout astoria"
 
 SYSTEMD_AUTO_ENABLE = "enable"
 SYSTEMD_SERVICE:${PN} = " \

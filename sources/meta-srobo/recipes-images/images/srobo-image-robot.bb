@@ -4,7 +4,6 @@ LICENSE = "MIT"
 inherit core-image
 
 IMAGE_FEATURES += " \
-    debug-tweaks \
     ssh-server-openssh \
     package-management \
     "

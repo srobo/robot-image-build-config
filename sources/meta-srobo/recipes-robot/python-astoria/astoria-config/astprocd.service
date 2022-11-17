@@ -5,7 +5,7 @@ After=mosquitto.service
 
 [Service]
 ExecStart=/usr/bin/astprocd
-User=astoria
+User=robot
 Restart=on-failure
 RestartSec=5s
 

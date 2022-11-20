@@ -21,6 +21,8 @@ RDEPENDS:${PN} = " \
     astoria-udiskie \
     python3-kchd \
     python3-sr-robot3 \
+    python3-debugpy \
+    python3-pydevd-pycharm \
     servohack \
     kit-ui \
     python3-rtui \

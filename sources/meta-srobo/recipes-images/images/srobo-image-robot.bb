@@ -3,7 +3,7 @@ LICENSE = "MIT"
 
 inherit core-image
 
-IMAGE_FEATURES += " \
+IMAGE_FEATURES = " \
     ssh-server-openssh \
     package-management \
     "

@@ -4,7 +4,7 @@ HOMEPAGE = "https://github.com/srobo/astoria"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=caab9905fbe5565770c80322899abeb1"
 
-SRC_URI[sha256sum] = "c2a63259ee8ebc33f54b341203979818df59222b010f7a0ecd3ace0f80d96dfc"
+SRC_URI[sha256sum] = "0e9e02e6f10b1d1e14f21498190c7c797138fe8a593da40f63e5254e8e0c7de4"
 
 PYPI_PACKAGE = "astoria"
 inherit pypi setuptools3

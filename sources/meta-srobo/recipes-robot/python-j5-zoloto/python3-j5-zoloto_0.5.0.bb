@@ -4,11 +4,14 @@ HOMEPAGE = "https://github.com/j5api/j5-zoloto"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=44a99382609e909183f51320bcee1127"
 
-SRC_URI[sha256sum] = "57aacbd7b05d6b121cc52eea21f689ef24b47fa3366699dc77be545504e386bf"
+SRCREV = "1dee81326e6680503090552f7c9c47b37aaeea2d"
+SRC_URI = "git://github.com/j5api/j5-zoloto;protocol=https;branch=main"
 
-PYPI_PACKAGE = "j5_zoloto"
-inherit pypi setuptools3
+S = "${WORKDIR}/git"
+
+inherit python_poetry_core
 
 RDEPENDS:${PN} = "${PYTHON_PN}-zoloto"
 
 BBCLASSEXTEND = "native nativesdk"
+

@@ -4,7 +4,7 @@ HOMEPAGE = "https://github.com/srobo/robot-tui"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=a9ebad0e1056648b8d9a4217ca40ca29"
 
-SRC_URI[sha256sum] = "f62cf1230e080d1cf3ed829432ad68d68e07e4d617eebd2dd062f5c2dcfd6eaa"
+SRC_URI[sha256sum] = "f039168bfbecc68329d8496c106cc657daba7670155eaa10b39c4010aedd83e8"
 
 PYPI_PACKAGE = "rtui"
 inherit pypi setuptools3

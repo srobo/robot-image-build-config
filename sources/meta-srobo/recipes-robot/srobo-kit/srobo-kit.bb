@@ -38,4 +38,6 @@ do_install () {
     install -m 0644 ${WORKDIR}/astoria.toml ${D}/etc/
     install -d ${D}/etc/udisks2/
     install -m 0644 ${WORKDIR}/mount_options.conf ${D}/etc/udisks2/
+    install -d ${D}${sysconfdir}/profile.d/
+    install -m 0755 ${WORKDIR}/srobo.sh ${D}${sysconfdir}/profile.d/
 }

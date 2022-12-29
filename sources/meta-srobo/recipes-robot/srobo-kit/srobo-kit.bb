@@ -13,6 +13,7 @@ SRC_URI = " \
     file://10-srobo.rules \
     file://astoria.toml \
     file://mount_options.conf \
+    file://srobo.sh \
     "
 
 DEPENDS = "astoria-config"

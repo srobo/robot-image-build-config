@@ -2,7 +2,7 @@ SUMMARY = "An AprilTag marker detection library"
 DESCRIPTION = "An AprilTag marker detection library"
 HOMEPAGE = "https://github.com/WillB97/april_vision"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=166254bc339a21e92d852d180a9063cc"
+LIC_FILES_CHKSUM = "file:///${S}/april_vision-${PV}.dist-info/LICENSE;md5=166254bc339a21e92d852d180a9063cc"
 
 SRC_URI = " \
     https://files.pythonhosted.org/packages/9f/f3/a620c73f6542fca09472e3e2ba8f9e6d39420b5bd1ef5180f46da6af2cdc/april_vision-0.2.0-py3-none-any.whl;downloadfilename=april_vision-${PV}-py3-none-any.zip;subdir=${BP} \

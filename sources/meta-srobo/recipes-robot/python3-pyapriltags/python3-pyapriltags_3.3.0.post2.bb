@@ -2,7 +2,7 @@ SUMMARY = "Python bindings for the Apriltags library"
 DESCRIPTION = "Python bindings for the Apriltags library"
 HOMEPAGE = "https://github.com/WillB97/pyapriltags"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE.md;md5=859bf09146db781f61937e279299e0b2"
+LIC_FILES_CHKSUM = "file:///${S}/pyapriltags-${PV}.dist-info/LICENSE.md;md5=859bf09146db781f61937e279299e0b2"
 
 BBCLASSEXTEND = "native nativesdk"
 

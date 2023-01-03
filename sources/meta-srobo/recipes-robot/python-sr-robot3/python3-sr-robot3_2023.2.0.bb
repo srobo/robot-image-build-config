@@ -4,8 +4,8 @@ HOMEPAGE = "http://github.com/srobo/sr-robot3"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=1892732acd90517c8febc2b852fcbec3"
 
-SRCREV = "8d446ef96618a294ca753910f1ba76773cde3204"
-SRC_URI = "git://github.com/srobo/sr-robot3;protocol=https;branch=april_vision"
+SRCREV = "a13c51d9664f3a1941e7f46c6889e95a25598f65"
+SRC_URI = "git://github.com/srobo/sr-robot3;protocol=https;branch=main"
 
 S = "${WORKDIR}/git"
 

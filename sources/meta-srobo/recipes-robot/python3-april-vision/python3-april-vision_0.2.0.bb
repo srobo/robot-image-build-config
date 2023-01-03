@@ -14,7 +14,7 @@ inherit python3-dir
 do_unpack[depends] += "unzip-native:do_populate_sysroot"
 
 DEPENDS += "python3"
-RDEPENDS:${PN} = "${PYTHON_PN}-pyapriltags ${PYTHON_PN}-pyquaternion ${PYTHON_PN}-numpy"
+RDEPENDS:${PN} = "${PYTHON_PN}-pyapriltags ${PYTHON_PN}-pyquaternion ${PYTHON_PN}-numpy opencv"
 
 FILES:${PN} += "\
     ${libdir}/${PYTHON_DIR}/site-packages/april_vision \

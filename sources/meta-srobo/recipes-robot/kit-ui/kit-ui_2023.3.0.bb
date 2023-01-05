@@ -8,7 +8,7 @@ SRC_URI = " \
         file://lighttpd.conf \
         "
 
-SRC_URI[sha256sum] = "f3adc0841e93b3d93a6b61c5406510300e615e6f9c7aed676b87ea1d10c4e137"
+SRC_URI[sha256sum] = "05f1dbf7233b7629802fc213046a0df0276abd4fa82ce462d0a48f6a1c697cb8"
 
 S = "${WORKDIR}"
 

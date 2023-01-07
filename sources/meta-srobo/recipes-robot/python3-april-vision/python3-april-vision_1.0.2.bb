@@ -4,7 +4,7 @@ HOMEPAGE = "https://github.com/WillB97/april_vision"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=166254bc339a21e92d852d180a9063cc"
 
-SRC_URI[sha256sum] = "ca1af02526c516650a37a12b08dc18b476e829fe54ad8d690473b029972f1af3"
+SRC_URI[sha256sum] = "fc5ae968fc7267f88abef47fa3bdb6148df28c763bc407c55775d089b73365f3"
 
 PYPI_PACKAGE = "april_vision"
 inherit pypi setuptools3

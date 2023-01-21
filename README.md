@@ -2,7 +2,7 @@
 
 Student Robotics OS is a Linux distribution for use on the [Student Robotics](https://studentrobotics.org) kit.
 
-This repository contains build scripts to compile disk images and update bundles.
+This repository contains build scripts to compile disk images.
 
 ## Setup Your Build Environment
 
@@ -64,15 +64,3 @@ The `assemble` script also supports writing directly to an SD card, although cau
 ```bash
 sudo ./assemble /dev/sdd
 ```
-
-## Building an Update Bundle
-
-An update bundle can be generated using the following command:
-
-```bash
-bitbake srobo-bundle-robot
-```
-
-The built file will be saved in `build/tmp/deploy/images/raspberrypi4-64/` with a file name like `srobo-bundle-robot-raspberrypi4-64-20220916204611.raucb`.
-
-This update file can then be used to update the robot.

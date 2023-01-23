@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=691d84ab639c4b8173db302930bf71f4"
 
 inherit systemd
 
-RDEPENDS:${PN} = "python3-astoria python3-udiskie mosquitto"
+RDEPENDS:${PN} = "python3-astoria python3-udiskie mosquitto mosquitto-clients"
 
 SRC_URI = " \
     file://LICENSE \

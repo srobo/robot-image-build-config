@@ -1,12 +1,11 @@
 # Configuration for Udiskie
+program_options:
+  file_manager: ""
+  notify: false
 device_config:
   - device_file: /dev/mmcblk0p1  # Ignore boot partition
     ignore: true
-  - device_file: /dev/mmcblk0p2  # Ignore Partition A
-    ignore: true
-  - device_file: /dev/mmcblk0p3  # Ignore Partition B
-    ignore: true
-  - device_file: /dev/mmcblk0p4  # Ignore Home Partition
+  - device_file: /dev/mmcblk0p2  # Ignore root partition
     ignore: true
   - id_label: SR_COMP_USB        # Mount competition mode USBs as read only
     options: [ro]

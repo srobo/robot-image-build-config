@@ -51,9 +51,9 @@
         "DEBIAN_FRONTEND=noninteractive"
       ],
       "scripts": [
-        "scripts/010-user.sh",
-        "scripts/020-system.sh",
-        "scripts/030-base.sh",
+        "scripts/010-base.sh",
+        "scripts/020-user.sh",
+        "scripts/030-system.sh",
         "scripts/040-python.sh",
         "scripts/050-mosquitto.sh",
         "scripts/060-astoria.sh",

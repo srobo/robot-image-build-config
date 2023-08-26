@@ -1,20 +1,16 @@
 #!/bin/bash
 set -eux -o pipefail
 
-apt-get -y update
-
 # Package install
 apt-get -y install \
+    python3-pip \
     cmake \
     build-essential
 
+pip3 install --upgrade pip setuptools wheel
+
 # Install base python packages
-pip3 install \
-    matplotlib \
-    pandas \
-    pillow \
-    wheel \
-    debugpy \
-    pyudev \
-    opencv-python-headless \
-    debugpy
+pip3 -r /tmp/packer/python/requirements.txt
+
+# Install additional useful libraries for the competitors
+pip3 -r /tmp/packer/python/libraries.txt

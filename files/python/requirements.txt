@@ -1,0 +1,5 @@
+# The python packages required to make the image work
+
+opencv-python-headless>=4.8.0,<5
+debugpy>=1.6.7,<2
+

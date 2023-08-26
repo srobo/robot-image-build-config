@@ -22,7 +22,3 @@ echo "$user:$password" > /boot/userconf
 
 # Enable ssh
 touch /boot/ssh
-
-# profile.d
-mv /tmp/packer/user/srobo-profile.sh /etc/profile.d/srobo.sh
-chmod 755 /etc/profile.d/srobo.sh

@@ -12,3 +12,10 @@ rm -r /etc/update-motd.d/
 mv /tmp/packer/system/issue/issue /etc/issue
 sed -i "s/%VERSION%/${SROBO_VERSION}/" /etc/issue
 chmod 644 /etc/motd
+
+# Add line to config.txt
+echo 'VIDEO_CAMERA = "1"' >> /boot/config.txt
+
+# profile.d
+mv /tmp/packer/user/srobo-profile.sh /etc/profile.d/srobo.sh
+chmod 755 /etc/profile.d/srobo.sh

@@ -1,0 +1,10 @@
+# This is a requirements file containing the libraries that we have promised to
+# competitors will be present.
+matplotlib
+pandas
+pillow
+shapely
+scipy
+scikit-learn
+flask
+networkx

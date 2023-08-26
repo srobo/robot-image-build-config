@@ -24,3 +24,6 @@ chmod -R 755 /usr/share/kit-ui
 # Set config
 rm /etc/nginx/sites-enabled/default
 mv /tmp/packer/webui/kit-ui.nginx /etc/nginx/sites-enabled/
+
+# fix a bug where nginx's log directory doesn't exist
+mkdir -p /var/log/nginx

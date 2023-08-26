@@ -16,15 +16,13 @@ chmod 644 /etc/dnsmasq.d/srobo.conf
 mv /tmp/packer/network/br0.netdev /etc/systemd/network/
 chmod 644 /etc/systemd/network/br0.netdev
 
-mv /tmp/packer/network/br0.network /etc/systemd/network/
-chmod 644 /etc/systemd/network/br0.network
+# Setup bridge address
+cat /tmp/packer/network/br0-dnsmasq.conf >> /etc/dhcpcd.conf
+
 
 echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/ip_forward.conf
 
 # Firewall
-mv /tmp/packer/network/nftables.conf /etc/
+mv /tmp/packer/network/nftables.conf /etc/nftables.conf
 chmod 644 /etc/nftables.conf
-
-mv /tmp/packer/network/nftables.service /usr/lib/systemd/system/
-chmod 644 /usr/lib/systemd/system/nftables.service
-systemctl enable astoria-udiskie.service
+systemctl enable nftables.service

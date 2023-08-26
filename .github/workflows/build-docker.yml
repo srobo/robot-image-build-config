@@ -25,7 +25,7 @@ jobs:
 
       - name: Build image
         run: |
-          chmod +x ./build.sh
+          chmod +x ./build-image.sh
           ./build-image.sh
 
       - name: Get output name

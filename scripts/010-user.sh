@@ -11,7 +11,7 @@ useradd \
     --create-home \
     -s /bin/bash \
     -u 1000 \
-    -G sudo,video,dialout \
+    -G sudo,video,dialout,adm,gpio \
     -p "$password" \
     $user
 
@@ -24,5 +24,5 @@ echo "$user:$password" > /boot/userconf
 touch /boot/ssh
 
 # profile.d
-mv /tmp/packer/user/srobo.sh /etc/profile.d/
+mv /tmp/packer/user/srobo-profile.sh /etc/profile.d/srobo.sh
 chmod 755 /etc/profile.d/srobo.sh

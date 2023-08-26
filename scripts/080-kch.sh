@@ -2,7 +2,7 @@
 set -eux -o pipefail
 
 # Install kchd
-pip3 install kchd RPi.GPIO
+pip3 install kchd
 
 # kchd systemd task
 mv /tmp/packer/kchd/kchd.service /usr/lib/systemd/system/

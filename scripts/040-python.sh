@@ -16,5 +16,5 @@ pip3 install \
     wheel \
     debugpy \
     pyudev \
-    opencv-contrib-python-headless \
+    opencv-python-headless \
     debugpy

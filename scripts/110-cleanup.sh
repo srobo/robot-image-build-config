@@ -3,4 +3,4 @@ set -eux -o pipefail
 
 apt-get -y clean
 
-pip3 cache purge
+rm -rf $HOME/.cache /tmp/* /var/lib/apt/lists/* /var/tmp/* /var/log/*

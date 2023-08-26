@@ -25,7 +25,8 @@ jobs:
 
       - name: Build image
         run: |
-          ./build-image.sh
+          chmod +x ./build.sh
+          ./build.sh
 
       - name: Get output name
         id: git-desc

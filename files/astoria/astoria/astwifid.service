@@ -1,0 +1,13 @@
+[Unit]
+Description=Astoria WiFi Daemon
+Wants=astmetad.service
+After=mosquitto.service dnsmasq.service
+
+[Service]
+ExecStart=/usr/local/bin/astwifid
+User=root
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

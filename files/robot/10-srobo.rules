@@ -1,0 +1,5 @@
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1bda", ATTRS{idProduct}=="0010", GROUP="robot", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1bda", ATTRS{idProduct}=="0011", GROUP="robot", MODE="0666"
+SUBSYSTEM=="tty", DRIVERS=="ftdi_sio", ATTRS{interface}=="MCV4B", GROUP="robot", MODE="0666"
+SUBSYSTEM=="gpio", GROUP="robot", MODE="0660"
+SUBSYSTEM=="bcm2835-gpiomem", KERNEL=="gpiomem", GROUP="robot", MODE="0660"

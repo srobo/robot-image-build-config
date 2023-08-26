@@ -1,0 +1,12 @@
+[Unit]
+Description=KCH LED Control Daemon
+After=mosquitto.service
+
+[Service]
+ExecStart=/usr/local/bin/kchd
+User=root
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,40 @@
+          
+                          [104;94m################[0m
+                      [104;94m########################[0m
+                    [104;94m############################[0m
+                  [104;94m################################[0m
+                [104;94m####################################[0m
+               [104;94m###########[107;97m                [104;94m###########[0m
+              [104;94m#######[107;97m                          [104;94m#######[0m
+             [104;94m####[107;97m      [104;94m######################[107;97m      [104;94m####[0m
+             [104;94m##[107;97m      [104;94m##########################[107;97m      [104;94m##[0m
+            [104;94m#####[107;97m      [104;94m######################[107;97m      [104;94m#####[0m
+            [104;94m########[107;97m       [104;94m##############[107;97m       [104;94m########[0m
+            [104;94m############[107;97m       [104;94m######[107;97m       [104;94m############[0m
+             [104;94m###############[107;97m     [104;94m##[107;97m     [104;94m###############[0m
+             [104;94m##########[107;97m        [104;94m######[107;97m        [104;94m##########[0m
+              [104;94m######[107;97m     [104;94m##################[107;97m     [104;94m######[0m
+               [104;94m##[107;97m     [104;94m########################[107;97m     [104;94m##[0m
+                [107;97m   [104;94m##############################[107;97m   [0m
+                 [104;94m##################################[0m
+                   [104;94m##############################[0m
+                      [104;94m########################[0m
+                         [104;94m##################[0m
+
+Welcome to Student Robotics OS %VERSION%
+
+This is the command line interface to your Brain Board.
+
+- Student Robotics does not guarantee support for the modification of the OS.
+- We may need you to upgrade the OS which will overwrite any changes.
+- Any modifications you make must be in line with the rules.
+- We reserve the right to inspect your Brain Board at any time.
+- Feel free to tinker. If you are stuck, ask in Discord, although we may be unable to help.
+
+Useful commands:
+
+- rtui - terminal-friendly alternative to the web interface
+- astctl - control commands for the robot management system
+- journalctl - system level logs
+- dmesg - operating system logs
+

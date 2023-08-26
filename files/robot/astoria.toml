@@ -1,0 +1,34 @@
+[mqtt]
+host = "::1"
+port = 1883
+enable_tls = false
+force_protocol_version_3_1 = true
+
+topic_prefix = "astoria"
+
+[wifi]
+interface = "wlan0"
+bridge = "br0"
+enable_wpa3 = false
+
+[astdiskd]
+ignored_mounts = [
+    "/",
+    "/boot",
+]
+
+[astprocd]
+default_usercode_entrypoint = "robot.py"
+
+[system]
+cache_dir = "/var/srobo/cache"
+initial_log_lines = [
+    "%SROBO_VERSION%",
+    "Is there something you'd like us to add to the kit or API? 💡",
+    "Perhaps there's something you think we should improve? 🛠️",
+    "Let us know your feedback about your experience using our kit at https://studentrobotics.org/kit-feedback 🗣️"
+]
+
+[env]
+OPENCV_VIDEOIO_PRIORITY_GSTREAMER=0
+

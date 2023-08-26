@@ -1,1 +1,43 @@
+name: Image build
 
+on:
+  push:
+    branches:
+      - main
+    tags:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install fdisk gdisk qemu-user-static libarchive-tools tar
+
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+        with:
+          fetch-depth: 0
+
+      - name: Build image
+        run: |
+          chmod +x ./build-image.sh
+          ./build-image.sh
+
+      - name: Get output name
+        id: git-desc
+        run: |
+          echo "git_desc=$(git describe --tags --always)" >> $GITHUB_ENV
+          echo "image_path=$(realpath ${{ github.workspace }}/*.img.xz)" >> $GITHUB_ENV
+          echo "image_name=$(basename ${{ github.workspace }}/*.img.xz)" >> $GITHUB_ENV
+
+      - name: Save image artifact
+        uses: actions/upload-artifact@v3
+        if: github.event_name != 'release'
+        with:
+          name: image-${{ env.git_desc }}
+          path: ${{ env.image_path }}

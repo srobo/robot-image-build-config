@@ -2,7 +2,6 @@
 set -eux -o pipefail
 
 # Install the webserver
-apt-get -y update
 apt-get -y install nginx
 
 # Download latest kit-ui release

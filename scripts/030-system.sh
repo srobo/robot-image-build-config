@@ -1,21 +1,16 @@
 #!/bin/bash
 set -eux -o pipefail
 
-# Set system motd
-mv /tmp/packer/system/motd/motd /etc/motd
-sed -i "s/%VERSION%/${SROBO_VERSION}/" /etc/motd
-chmod 644 /etc/motd
+# Set system motd and issue
+mv /tmp/packer/system/{motd,issue} /etc/
+sed -i "s/%VERSION%/${SROBO_VERSION}/" /etc/motd /etc/issue
+chmod 644 /etc/motd /etc/issue
 
 rm -r /etc/update-motd.d/
-
-# Set system issue
-mv /tmp/packer/system/issue/issue /etc/issue
-sed -i "s/%VERSION%/${SROBO_VERSION}/" /etc/issue
-chmod 644 /etc/motd
 
 # Add line to config.txt
 echo 'VIDEO_CAMERA = "1"' >> /boot/config.txt
 
-# profile.d
-mv /tmp/packer/user/srobo-profile.sh /etc/profile.d/srobo.sh
+# Disable using gstreamer for opencv in profile.d
+mv /tmp/packer/system/srobo-profile.sh /etc/profile.d/srobo.sh
 chmod 755 /etc/profile.d/srobo.sh

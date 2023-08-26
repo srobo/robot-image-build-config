@@ -10,7 +10,7 @@ apt-get -y install \
 pip3 install --upgrade pip setuptools wheel
 
 # Install base python packages
-pip3 -r /tmp/packer/python/requirements.txt
+pip3 install -r /tmp/packer/python/requirements.txt
 
 # Install additional useful libraries for the competitors
-pip3 -r /tmp/packer/python/libraries.txt
+pip3 install -r /tmp/packer/python/libraries.txt

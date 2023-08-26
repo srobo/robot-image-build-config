@@ -1,5 +1,9 @@
 # The python packages required to make the image work
+git+https://github.com/srobo/sr-robot.git@sr2024
+kchd
+astoria
+
+rtui
 
 opencv-python-headless>=4.8.0,<5
 debugpy>=1.6.7,<2
-

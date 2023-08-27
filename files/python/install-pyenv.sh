@@ -16,3 +16,6 @@ source ~/.profile
 # Install python 3.11.5
 pyenv update
 pyenv install 3.11.5
+
+# Set python to default to 3.11.5 in all shells for robot user
+pyenv global 3.11.5

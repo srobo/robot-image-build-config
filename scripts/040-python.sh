@@ -1,19 +1,24 @@
 #!/bin/bash
 set -eux -o pipefail
 
-# Package install
+user=$(id -un 1000)
+home=/home/$user
+
+# Package install for python libraries
 apt-get -y install \
-    python3-pip \
     cmake \
     build-essential
 
-pip3 install --upgrade pip setuptools wheel
+# Package install for pyenv
+apt-get -y install \
+    libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm \
+    libncurses5-dev libncursesw5-dev xz-utils tk-dev libgdbm-dev lzma lzma-dev \
+    tcl-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev wget curl \
+    make build-essential openssl
 
-# Install base python packages
-pip3 install -r /tmp/packer/python/requirements.txt
+mv /tmp/packer/python/install-pyenv.sh /tmp/install-pyenv.sh
+mv /tmp/packer/python/install-packages.sh /tmp/install-packages.sh
+chmod +x /tmp/install-pyenv.sh /tmp/install-packages.sh
 
-# Install additional useful libraries for the competitors
-pip3 install -r /tmp/packer/python/libraries.txt
-
-# Make the entrypoint folder
-mkdir -p /home/robot/.local/bin
+su - $user -c /tmp/install-pyenv.sh
+su - $user -c /tmp/install-packages.sh

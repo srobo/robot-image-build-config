@@ -1,4 +1,5 @@
 # The python packages required to make the image work
+RPi.GPIO>=0.7.0,<1
 git+https://github.com/srobo/sr-robot.git@sr2024
 kchd
 astoria

@@ -14,3 +14,6 @@ pip3 install -r /tmp/packer/python/requirements.txt
 
 # Install additional useful libraries for the competitors
 pip3 install -r /tmp/packer/python/libraries.txt
+
+# Make the entrypoint folder
+mkdir -p /home/robot/.local/bin

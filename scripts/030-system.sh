@@ -3,7 +3,7 @@ set -eux -o pipefail
 
 # Set system motd and issue
 mv /tmp/packer/system/{motd,issue} /etc/
-sed -i "s/%VERSION%/${SROBO_VERSION}/" /etc/motd /etc/issue
+sed -i "s/%SROBO_VERSION%/${SROBO_NAME} ${SROBO_VERSION}/" /etc/motd /etc/issue
 chmod 644 /etc/motd /etc/issue
 
 rm -r /etc/update-motd.d/

@@ -1,4 +1,4 @@
-          
+
                           [104;94m################[0m
                       [104;94m########################[0m
                     [104;94m############################[0m
@@ -21,7 +21,7 @@
                       [104;94m########################[0m
                          [104;94m##################[0m
 
-Welcome to Student Robotics OS %VERSION%
+Welcome to "%SROBO_VERSION%"
 
 This is the command line interface to your Brain Board.
 

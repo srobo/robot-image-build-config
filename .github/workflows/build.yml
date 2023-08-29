@@ -12,6 +12,9 @@ jobs:
   build:
     name: Build image
     runs-on: ubuntu-latest
+    permissions:
+      # Needed for creating releases
+      contents: write
     steps:
       - name: Install dependencies
         run: |
@@ -37,7 +40,20 @@ jobs:
 
       - name: Save image artifact
         uses: actions/upload-artifact@v3
-        if: github.event_name != 'release'
+        if: github.ref_type != 'tag'
         with:
           name: image-${{ env.git_desc }}
           path: ${{ env.image_path }}
+
+      - name: Do release with image artifact
+        if: github.ref_type == 'tag'
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          allowUpdates: true
+          artifact: ${{ env.image_path }}
+          draft: true
+          generateReleaseNotes: true
+          omitBodyDuringUpdate: true
+          omitNameDuringUpdate: true
+          updateOnlyUnreleased: true

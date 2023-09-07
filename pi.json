@@ -63,6 +63,12 @@
         "scripts/100-network.sh",
         "scripts/110-cleanup.sh"
       ]
+    },
+    {
+      "type": "file",
+      "source": "/home/robot/py-packages.txt",
+      "destination": "./py-packages.txt",
+      "direction": "download"
     }
   ],
   "post-processors": [

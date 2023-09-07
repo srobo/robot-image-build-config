@@ -26,4 +26,4 @@ output-*/
 
 # End of https://www.toptal.com/developers/gitignore/api/packer
 *-image-*.img*
-
+py-packages.txt

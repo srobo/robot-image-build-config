@@ -1,0 +1,13 @@
+[Unit]
+Description=Astoria Metadata Manager Daemon
+Wants=astdiskd.service
+After=mosquitto.service
+
+[Service]
+ExecStart=/usr/local/bin/astmetad
+User=robot
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

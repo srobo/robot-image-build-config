@@ -1,0 +1,84 @@
+{
+  "variables": {
+    "SROBO_NAME": "",
+    "SROBO_VERSION": "",
+    "SKIP_COMPRESSION": "false"
+  },
+  "builders": [{
+    "type": "arm",
+    "file_urls" : ["https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2023-05-03/2023-05-03-raspios-bullseye-arm64-lite.img.xz"],
+    "file_checksum_url": "https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2023-05-03/2023-05-03-raspios-bullseye-arm64-lite.img.xz.sha256",
+    "file_checksum_type": "sha256",
+    "file_unarchive_cmd": ["xz", "--decompress", "$ARCHIVE_PATH"],
+    "file_target_extension": "xz",
+    "image_build_method": "resize",
+    "image_path": "{{user `SROBO_NAME`}}-image-{{user `SROBO_VERSION`}}.img",
+    "image_size": "4G",
+    "image_type": "dos",
+    "image_partitions": [
+      {
+        "name": "boot",
+        "type": "c",
+        "start_sector": "8192",
+        "filesystem": "vfat",
+        "size": "256M",
+        "mountpoint": "/boot"
+      },
+      {
+        "name": "root",
+        "type": "83",
+        "start_sector": "532480",
+        "filesystem": "ext4",
+        "size": "0",
+        "mountpoint": "/"
+      }
+    ],
+    "image_chroot_env": ["PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"],
+    "qemu_binary_source_path": "/usr/bin/qemu-arm-static",
+    "qemu_binary_destination_path": "/usr/bin/qemu-arm-static"
+  }],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "./files/",
+      "destination": "/tmp/packer"
+    },
+    {
+      "type": "shell",
+      "environment_vars": [
+        "SROBO_NAME={{user `SROBO_NAME`}}",
+        "SROBO_VERSION={{user `SROBO_VERSION`}}",
+        "DEBIAN_FRONTEND=noninteractive"
+      ],
+      "scripts": [
+        "scripts/010-base.sh",
+        "scripts/020-user.sh",
+        "scripts/030-system.sh",
+        "scripts/040-python.sh",
+        "scripts/050-mosquitto.sh",
+        "scripts/060-astoria.sh",
+        "scripts/070-robot.sh",
+        "scripts/080-kch.sh",
+        "scripts/090-webui.sh",
+        "scripts/100-network.sh",
+        "scripts/110-cleanup.sh"
+      ]
+    },
+    {
+      "type": "file",
+      "source": "/home/robot/py-packages.txt",
+      "destination": "./py-packages.txt",
+      "direction": "download"
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "shell-local",
+      "inline": [
+        "if [ \"{{user `SKIP_COMPRESSION`}}\" != \"true\" ]; then",
+        "xz -vT0 \"{{user `SROBO_NAME`}}-image-{{user `SROBO_VERSION`}}.img\"",
+        "fi"
+      ]
+    }
+  ]
+}

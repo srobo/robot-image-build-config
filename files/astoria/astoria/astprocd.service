@@ -1,0 +1,13 @@
+[Unit]
+Description=Astoria Process Manager Daemon
+Wants=astdiskd.service astmetad.service
+After=mosquitto.service
+
+[Service]
+ExecStart=/usr/local/bin/astprocd
+User=robot
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

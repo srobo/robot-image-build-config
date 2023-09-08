@@ -1,0 +1,10 @@
+# The python packages required to make the image work
+RPi.GPIO>=0.7.0,<1
+sr-robot3==2024.0.0rc1
+kchd==0.4.1
+astoria==0.11.2
+
+rtui==0.1.1
+
+opencv-python-headless>=4.8.0,<5
+debugpy>=1.6.7,<2

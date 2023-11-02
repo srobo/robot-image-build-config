@@ -21,7 +21,7 @@ python_version="3.11.5"
 
 # Install python
 pyenv update
-pyenv install $python_version
+pyenv install --verbose $python_version
 
 # Set python to default to pyenv in all shells for robot user
 pyenv global $python_version

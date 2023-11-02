@@ -9,6 +9,10 @@ cat << "EOF" >> ~/.profile
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# Enable Python optimizations
+export PYTHON_CONFIGURE_OPTS='--enable-optimizations --with-lto'
+export PYTHON_CFLAGS='-march=native -mtune=native'
 EOF
 
 source ~/.profile

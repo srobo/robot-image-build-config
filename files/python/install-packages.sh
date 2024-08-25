@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eux -o pipefail
 
-# Load pyenv python into path
+# Ensure correct Python is being used
 source ~/.profile
 
 pip install --upgrade pip setuptools wheel

@@ -35,12 +35,11 @@ mv /tmp/packer/astoria/astoria/* /usr/lib/systemd/system/
 chmod 644 /usr/lib/systemd/system/ast*d.service /usr/lib/systemd/system/astoria-udiskie.service
 systemctl enable astdiskd.service astmetad.service astoria-udiskie.service astprocd.service astwifid.service
 
-# Make pyenv python entrypoint globally available
-home="/home/$(id -un 1000)"
-if [ -d $home/.pyenv ]; then
-    python_bin_path="$(echo $home/.pyenv/versions/*/bin)"
-    ln -s $python_bin_path/astdiskd /usr/local/bin/astdiskd
-    ln -s $python_bin_path/astmetad /usr/local/bin/astmetad
-    ln -s $python_bin_path/astprocd /usr/local/bin/astprocd
-    ln -s $python_bin_path/astwifid /usr/local/bin/astwifid
-fi
+# Ensure correct Python is being used
+source ~/.profile
+
+# Make entrypoints globally available
+ln -s $(which astdiskd) /usr/local/bin/astdiskd
+ln -s $(which astmetad) /usr/local/bin/astmetad
+ln -s $(which astprocd) /usr/local/bin/astprocd
+ln -s $(which astwifid) /usr/local/bin/astwifid

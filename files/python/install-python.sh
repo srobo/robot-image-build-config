@@ -12,9 +12,11 @@ source $HOME/.cargo/env
 # Install Python
 uv python install $python_version
 
+uv python pin
+
 # Use uv Python by default
 cat << "EOF" >> ~/.profile
-export PATH=$(uv python find $python_version)../:${PATH}
+export PATH=$(uv python find)../:${PATH}
 EOF
 
 source ~/.profile

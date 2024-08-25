@@ -6,6 +6,9 @@ python_version="3.11.5"
 # Install uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# Source environment for access to uv
+source $HOME/.cargo/env
+
 # Install Python
 uv python install $python_version
 

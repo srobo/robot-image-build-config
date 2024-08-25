@@ -35,11 +35,8 @@ mv /tmp/packer/astoria/astoria/* /usr/lib/systemd/system/
 chmod 644 /usr/lib/systemd/system/ast*d.service /usr/lib/systemd/system/astoria-udiskie.service
 systemctl enable astdiskd.service astmetad.service astoria-udiskie.service astprocd.service astwifid.service
 
-# Ensure correct Python is being used
-source ~/.profile
-
 # Make entrypoints globally available
-ln -s $(which astdiskd) /usr/local/bin/astdiskd
-ln -s $(which astmetad) /usr/local/bin/astmetad
-ln -s $(which astprocd) /usr/local/bin/astprocd
-ln -s $(which astwifid) /usr/local/bin/astwifid
+ln -s /opt/venv/bin/astdiskd /usr/local/bin/astdiskd
+ln -s /opt/venv/bin/astmetad /usr/local/bin/astmetad
+ln -s /opt/venv/bin/astprocd /usr/local/bin/astprocd
+ln -s /opt/venv/bin/astwifid /usr/local/bin/astwifid

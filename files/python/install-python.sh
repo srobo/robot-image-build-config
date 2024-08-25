@@ -16,7 +16,7 @@ uv python install $python_version
 cat << "EOF" >> ~/.profile
 # Since there's only 1 version installed through uv,
 # there's no need to specify a version
-export PATH=$(uv python find)../:${PATH}
+export PATH=$(dirname $(uv python find)):${PATH}
 EOF
 
 source ~/.profile

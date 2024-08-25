@@ -20,3 +20,6 @@ export PATH=$(dirname $(uv python find)):${PATH}
 EOF
 
 source ~/.profile
+
+# Allow package install in uv's Python
+find $(uv python dir) -name "EXTERNALLY-MANAGED" -delete

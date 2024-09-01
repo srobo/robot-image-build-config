@@ -1,6 +1,6 @@
 # The python packages required to make the image work
 RPi.GPIO>=0.7.0,<1
-sr-robot3==2024.0.1
+sr-robot3==2025.0.1
 kchd==0.4.1
 astoria==0.11.3
 

@@ -8,13 +8,10 @@ apt-get -y install \
     cmake \
     build-essential
 
-# Package install for pyenv
-apt-get -y install \
-    libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm \
-    libncurses5-dev libncursesw5-dev xz-utils tk-dev libgdbm-dev lzma lzma-dev \
-    tcl-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev wget curl \
-    make build-essential openssl
+# Create directory for virtualenv
+mkdir /opt/venv
+chown $user /opt/venv
 
-chmod +x /tmp/packer/python/install-pyenv.sh /tmp/packer/python/install-packages.sh
-su - $user -c /tmp/packer/python/install-pyenv.sh
+chmod +x /tmp/packer/python/install-python.sh /tmp/packer/python/install-packages.sh
+su - $user -c /tmp/packer/python/install-python.sh
 su - $user -c /tmp/packer/python/install-packages.sh
